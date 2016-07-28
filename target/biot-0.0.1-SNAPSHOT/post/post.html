@@ -1,0 +1,110 @@
+
+<div class="alert alert-success" role="alert" ng-show="{{success}}">Successfully message posted...</div>
+<div style="background-color: #e8e8e8">
+<br>
+<br>
+<br>
+<div class="container margin-100">
+  <div class="row profile">
+  <form name="myForm">
+    <div class="col-lg-9">
+      <div class="profile-content">
+      <div>
+		  <md-input-container flex>
+		  <label>Content to broadcast</label>
+		  <textarea ng-model="post.message"   columns="1" md-maxlength="2000"></textarea>
+		</md-input-container>
+	</div>
+        <div class="row">
+          <div class="col-lg-6">
+            <md-input-container flex col-md-6>
+            <label>Start Date</label>
+            <input name="startdate" ng-model="post.startDate"  type="date" ng-disabled="myForm.$invalid || submitting"   required>
+                <div ng-messages="formSignin.user.$error" ng-if="formSignin.user.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+          </md-input-container>
+        </div>
+        <div class="col-lg-6">
+          <md-input-container flex col-md-6>
+          <label>End Date</label>
+          <input name="enddate" ng-model="post.endDate"  type="date" ng-disabled="myForm.$invalid || submitting"  required>
+              <div ng-messages="formSignin.user.$error" ng-if="formSignin.user.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+        </md-input-container>
+      </div>
+    </div>
+     <div class="row">
+     <div class="col-lg-6">
+     <label >Whom do you want to send? *</label>
+     <div ng-disabled="myForm.$invalid || submitting" 
+            isteven-multi-select 
+            input-model="users" 
+            output-model="post.selectedUsers"
+            button-label="icon name"        
+            item-label="icon name maker"        
+            tick-property="ticked"                
+            >
+       </div>
+        </div> 
+        <label style="padding-left: 15px;">To which Business Unit do you want to send? *</label>
+           <div class="col-lg-6" ng-disabled="myForm.$invalid || submitting" 
+            isteven-multi-select 
+            input-model="profile" 
+            output-model="post.selectedProfiles"
+            button-label="icon name"        
+            item-label="icon name maker"        
+            tick-property="ticked"                
+            >
+        </div> 
+        </div> 
+
+<div class="row" style="margin-top:20px;">
+
+ <div class="col-lg-12 col-sm-12 col-12">
+            <span class="file-input btn btn-block btn-primary btn-file">
+                Wanna image too?&hellip; <input type="file" ng-file-select="onFileSelect($files)" >
+            </span>
+        </div>
+        <br>
+           <img ng-hide="post.imageSrc" align="center"  width="350px" height="130px" style="margin-top:50px;margin-left: auto;margin-right: auto;display: block"  border="0"/><br/>
+        
+   <img ng-src="{{post.imageSrc}}" ng-if="post.imageSrc"  width="350px" height="130px" style="margin-top:15px;margin-left: auto;margin-right: auto;display: block" /><br/>
+ </div>
+  <md-button class="md-raised md-primary center-block" ng-disabled="myForm.$invalid || submitting"  ng-click="postMessage();">{{submitVaue}}</md-button>
+  </div>
+  </div>
+    </form>
+<div class="col-lg-3">
+  <div class="profile-sidebar">
+    <!-- SIDEBAR USERPIC -->
+    <div class="profile-userpic">
+      <img ng-src="{{$storage.userInfo.image}}" class="img-responsive" alt="">
+    </div>
+    <!-- END SIDEBAR USERPIC -->
+    <!-- SIDEBAR USER TITLE -->
+    <div class="profile-usertitle">
+      <div class="profile-usertitle-name">
+      <span  class="profile-usertitle-name"> {{$storage.userInfo.userName}}</span> - <span class="profile-usertitle-job"> {{$storage.userInfo.profile}} </span>
+      </div>
+    </div>
+    <!-- END SIDEBAR USER TITLE -->
+    <!-- SIDEBAR BUTTONS -->
+    <div class="profile-userbuttons">
+      <md-button class="md-raised md-warn"  busy="Submitting.." ng-click="signout()"> Sign out </md-button>
+    </div>
+    <div style="text-align:center; margin-top:10px;" >
+      <b>Guys who sneaked in your zone</b>
+      </div>
+         <div style="padding:5px;" class="profile-userpicSmall"  ng-repeat ="locationUser in usersOnMyLocation"  > &nbsp;<img ng-src={{locationUser.image}} width="50px;" height="50px">&nbsp;{{locationUser.name}}&nbsp;</div>
+    
+    <!-- END SIDEBAR BUTTONS -->
+    <!-- SIDEBAR MENU -->
+    <!-- END MENU -->
+  </div>
+</div>
+</div>
+<br>
+<br>
+</div>

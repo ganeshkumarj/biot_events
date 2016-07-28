@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sella Inbox</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/angular-material.css">
+      <link rel='stylesheet' href='css/loading-bar.css' type='text/css' media='all' />
+  
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> -->
+<!-- Optional theme -->
+ <link rel="stylesheet" href="css/toaster.css">
+
+  <link rel="stylesheet" href="app.css">
+
+
+    <script src="vendor/jquery-1.11.3.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="vendor/bootstrap.min.js"></script>
+<script src="vendor/underscore.js"></script>
+  <script src="vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-controller="HomeController" ng-class="postPageBG ? 'BGash':'BGblue'">
+ <!--<header style="height: 60px;background-color: white;">
+<div class="pull-right" n>
+                <ul class="nav pull-right">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
+                            <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+
+</header> -->
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+<toaster-container ></toaster-container>
+  <div ng-view ></div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="vendor/angular.js"></script>
+      <script src="vendor/angular-route.js"></script>
+    <script src="vendor/angular-aria.js"></script>
+    <script src="vendor/angular-animate.js"></script>
+    <script src="vendor/angular-material.js"></script>
+    <script src="vendor/angular-messages.js"></script>
+ 	<script  src='vendor/loading-bar.js'></script>
+          <script src="vendor/ng-file-upload-shim.js"></script>
+          <script src="vendor/datepicker.js"></script>
+             <script src="vendor/angular-sanitize.js"></script>
+<script src="vendor/toaster.js"></script>
+
+     <script src="vendor/ng-file-upload.js"></script>
+          <script src="vendor/multiselect.js"></script>
+		  <script src="vendor/ngStorage.js"></script>
+		
+  <script src="app.js"></script>
+  <script src="login/login.js"></script>
+  <script src="post/post.js"></script>
+  <script src="login/UserInformationService.js"></script>
+    <script src="BIOTConstant.js"></script>
+	 <script src="HomeController.js"></script>
+  
+</body>
+</html>

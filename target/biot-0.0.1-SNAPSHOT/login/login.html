@@ -1,0 +1,31 @@
+<div>
+<div class="container">
+<div class="heading">
+<h1>sella inbox</h1>
+</div>
+<div class="card card-container">
+    <img id="profile-img" class="profile-img-card" src="images/user-avatar.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    <form name="formSignin" novalidate>
+        <md-input-container flex>
+  			<label>GBS Code</label>
+  			<input  ng-model="Login.user" required type="text" name="user" capitalize>
+  			<div ng-messages="formSignin.user.$error" ng-if="formSignin.user.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+		</md-input-container>
+		<md-input-container flex>
+ 			 <label>Password</label>
+  			 <input ng-model="Login.password" required type="password" name="password">
+  			  <div ng-messages="formSignin.password.$error" ng-if="formSignin.password.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+		</md-input-container>
+		<md-button class="md-raised btn1"   ng-disabled="formSignin.$invalid || isProcessing"  ng-click="signIn()"> {{loading ? 'please wait...' : 'Submit'}} </md-button>
+		
+		<label style="color: red !important;text-align: center;display:block"  ng-show="errorDescription">{{errorDescription}}</label>
+    </form>
+    <!-- /form -->
+</div><!-- /card-container -->
+</div><!-- /container -->
+</div>
